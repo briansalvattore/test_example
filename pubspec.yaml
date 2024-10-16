@@ -1,0 +1,49 @@
+name: brian_test
+description: "A project by Brian"
+publish_to: '@briansalvattore' 
+
+version: 0.0.1+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ui
+  flutter_localizations:
+    sdk: flutter
+
+  signals: 5.5.0
+  get_it: 8.0.0
+  go_router: 14.3.0
+  intl: 0.19.0
+
+  # domain
+
+  # data
+  ## firebase
+  firebase_auth: 5.3.1
+  firebase_core: 3.6.0
+  firebase_crashlytics: 4.1.3
+  ## remote
+  http: 1.2.2
+  ## local
+  get_storage: 2.1.1
+  ## login
+  google_sign_in: ^6.2.1
+  ## utils
+  logger: 2.3.0
+  ## location
+  geolocator: 13.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  very_good_analysis: 6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true

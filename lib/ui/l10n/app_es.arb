@@ -1,0 +1,10 @@
+{
+    "@@locale": "es",
+    "appName": "BrianApp",
+    "loginWelcome": "Bienvenido a tu cuenta",
+    "loginSocialNetwork": "Iniciar sesión con redes sociales",
+    "dialogLoading": "Cargando",
+    "locationErrorDisabled": "La localización está desactivada, tiene que activarla en configuraciones del teléfono",
+    "locationErrorDenied": "Tiene que permitir los permisos de localización en configuraciones del teléfono",
+    "locationError": "Hubo un error: "
+}

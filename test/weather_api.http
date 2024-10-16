@@ -1,0 +1,7 @@
+@appid = 0532db85786c00b49f99adaa33afd7d4
+@lat = -22.984400647358854
+@lon = -43.19112703729711
+
+GET https://api.openweathermap.org/data/2.5/weather?lat={{lat}}&lon={{lon}}&appid={{appid}}&units=metric
+content-type: application/json
+
