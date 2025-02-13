@@ -30,7 +30,7 @@ dependencies:
   ## remote
   http: 1.2.2
   ## local
-  get_storage: 2.1.1
+  shared_preferences: 2.5.2
   ## login
   google_sign_in: ^6.2.1
   ## utils

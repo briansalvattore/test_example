@@ -8,6 +8,7 @@ import 'package:brian_test/data/location/location_impl.dart';
 import 'package:brian_test/data/location/location_interface.dart';
 import 'package:brian_test/data/storage/storage_impl.dart';
 import 'package:brian_test/data/storage/storage_interface.dart';
+import 'package:get_it/get_it.dart';
 
 class LayerData {
   LayerData._internal();
@@ -20,15 +21,20 @@ class LayerData {
   static LayerData get repository => LayerData._();
 
   static Future<void> get instance async {
+    final getIt = GetIt.instance
+      ..registerSingleton<StorageImpl>(
+        StorageImpl.instance(),
+      );
+
     await Future.wait([
-      StorageImpl.init(),
+      getIt.get<StorageImpl>().init(),
       FirebaseImpl.init(),
     ]);
   }
 
   Firebase get firebase => FirebaseImpl();
 
-  Storage get storage => StorageImpl();
+  Storage get storage => GetIt.instance.get<StorageImpl>();
 
   Google get google => GoogleImpl();
 

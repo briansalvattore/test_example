@@ -1,20 +1,23 @@
 import 'package:brian_test/data/logger_interface.dart';
 import 'package:brian_test/data/storage/app_get_storage.dart';
 import 'package:brian_test/data/storage/storage_interface.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageImpl extends Storage {
-  static const index = 1;
+  StorageImpl.instance();
 
-  final _userStorage = AppGetStorage.init('user_$index');
-  final _weatherStorage = AppGetStorage.init('weather_$index');
+  late AppGetStorage _userStorage;
+  late AppGetStorage _weatherStorage;
 
-  static Future<StorageImpl> init() async {
-    await GetStorage.init().then((_) {
-      log.i('init storage');
-    });
+  Future<void> init() async {
+    final sharedPreferences = await SharedPreferences.getInstance();
 
-    return StorageImpl();
+    const index = 1;
+
+    _userStorage = AppGetStorage.init(sharedPreferences, 'user_$index');
+    _weatherStorage = AppGetStorage.init(sharedPreferences, 'weather_$index');
+
+    log.i('init storage');
   }
 
   @override
